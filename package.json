@@ -1,0 +1,16 @@
+{
+  "name": "sdk-automation-experiments",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SDK testing examples (Node.js) for generic SDKs: initialization, auth, webhook handling, error responses",
+  "scripts": {
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

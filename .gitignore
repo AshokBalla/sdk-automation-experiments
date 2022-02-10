@@ -1,0 +1,8 @@
+node_modules/
+coverage/
+.report/
+.env
+reports/
+.playwright/
+*.log
+*.sqlite
