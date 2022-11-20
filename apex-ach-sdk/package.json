@@ -1,0 +1,31 @@
+{
+  "type": "module",
+  "name": "ach-sdk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --config achsdkcucumber.js",
+    "test:reports": "node generate-reports.js",
+    "test:full": "npm run test:with-reports && npm run test:coverage",
+    "test:with-reports": "cucumber-js --config achsdkcucumber.js --format json:reports/cucumber-report.json && node generate-reports.js",
+    "test:all": "node run-tests-with-reports.js",
+    "test:coverage": "c8 --reporter=html --reporter=text --reporter=lcov --reporter=json cucumber-js --config achsdkcucumber.js",
+    "test:coverage:html": "c8 --reporter=html cucumber-js --config achsdkcucumber.js",
+    "test:coverage:lcov": "c8 --reporter=lcov cucumber-js --config achsdkcucumber.js"
+  },
+  "workspaces": [
+    "ach-sdk"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@cucumber/pretty-formatter": "^2.0.1",
+    "c8": "^10.1.3",
+    "dotenv": "^16.4.7",
+    "puppeteer": "^24.6.0",
+    "multiple-cucumber-html-reporter": "^3.5.0"
+  }
+}
