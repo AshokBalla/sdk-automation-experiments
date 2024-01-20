@@ -1,0 +1,36 @@
+{
+  "name": "regiona-credit-card-sdk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --config cucumber.js",
+    "test:reports": "node generate-reports.js",
+    "test:with-reports": "cucumber-js --config cucumber.js --format json:reports/cucumber-report.json && node generate-reports.js",
+    "test:all": "node run-tests-with-reports.js",
+    "test:coverage": "c8 --reporter=html --reporter=text --reporter=lcov --reporter=json cucumber-js --config cucumber.js",
+    "coverage": "c8 --reporter=html --reporter=text cucumber-js --config cucumber.js"
+  },
+  "keywords": [
+    "testing",
+    "cucumber",
+    "credit-card",
+    "sdk"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "puppeteer": "^24.18.0"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.0.1",
+    "@cucumber/html-formatter": "^21.14.0",
+    "@babel/core": "^7.28.3",
+    "@babel/register": "^7.28.3",
+    "@cucumber/pretty-formatter": "^2.1.0",
+    "c8": "^8.0.1",
+    "multiple-cucumber-html-reporter": "^3.5.0"
+  }
+}

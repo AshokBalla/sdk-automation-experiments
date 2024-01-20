@@ -1,0 +1,26 @@
+{
+    "all": true,
+    "include": [
+        "pages/**/*.js",
+        "features/**/*.js",
+        "*.js",
+        "../../pages/**/*.js",
+        "../../src/**/*.js"
+    ],
+    "exclude": [
+        "node_modules/**",
+        "coverage/**",
+        "**/*.test.js",
+        "**/*.spec.js"
+    ],
+    "reporter": [
+        "html",
+        "text",
+        "lcov"
+    ],
+    "check-coverage": false,
+    "branches": 80,
+    "lines": 80,
+    "functions": 80,
+    "statements": 80
+}
