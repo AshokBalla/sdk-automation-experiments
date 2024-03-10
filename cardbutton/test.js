@@ -1,0 +1,46 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://example.com
+  const page1Promise = page.waitForEvent('popup');
+  await page.locator('iframe[name="SecurePay-checkout-button"]').contentFrame().getByRole('button', { name: 'Omni Pay' }).click();
+  const page1 = await page1Promise;
+  await page1.getByRole('textbox', { name: 'First Name' }).click();
+  await page1.getByRole('textbox', { name: 'First Name' }).fill('Ashok');
+  await page1.getByRole('textbox', { name: 'First Name' }).press('Tab');
+  await page1.getByRole('textbox', { name: 'Last Name' }).fill('Balla');
+  await page1.getByRole('textbox', { name: 'Last Name' }).press('Tab');
+  await page1.getByRole('textbox', { name: 'Email' }).fill('ashok@SecurePay.com');
+  await page1.getByRole('textbox', { name: 'Email' }).press('Tab');
+  await page1.getByRole('textbox', { name: 'Phone (optional)' }).press('Tab');
+  await page1.getByRole('textbox', { name: 'Address Line 1' }).fill('1234 Testing Lane');
+  await page1.getByRole('textbox', { name: 'Address Line 1' }).press('Tab');
+  await page1.getByRole('textbox', { name: 'Address Line 2 (optional)' }).fill('Apt 219');
+  await page1.getByRole('textbox', { name: 'Address Line 2 (optional)' }).press('Tab');
+  await page1.getByRole('textbox', { name: 'City' }).click();
+  await page1.getByRole('textbox', { name: 'City' }).fill('Cincinati');
+  await page1.getByRole('textbox', { name: 'City' }).press('Tab');
+  await page1.getByRole('textbox', { name: 'State' }).fill('Oh');
+  await page1.getByRole('textbox', { name: 'State' }).press('Tab');
+  await page1.getByRole('textbox', { name: 'Zip' }).fill('45321');
+  await page1.getByRole('textbox', { name: 'Zip' }).press('Tab');
+  await page1.locator('iframe[name="card-name-iframe"]').contentFrame().getByRole('textbox', { name: 'Name on credit or debit card' }).fill('Ashok Balla');
+  await page1.locator('iframe[name="card-name-iframe"]').contentFrame().getByRole('textbox', { name: 'Name on credit or debit card' }).press('Tab');
+  await page1.locator('iframe[name="card-number-iframe"]').contentFrame().getByRole('textbox', { name: 'Credit or debit card number' }).fill('5454 5454 5454 5454');
+  await page1.locator('iframe[name="card-exp-iframe"]').contentFrame().getByRole('textbox', { name: 'Credit or debit card' }).click();
+  await page1.locator('iframe[name="card-exp-iframe"]').contentFrame().getByRole('textbox', { name: 'Credit or debit card' }).fill('01/30');
+  await page1.locator('iframe[name="card-exp-iframe"]').contentFrame().getByRole('textbox', { name: 'Credit or debit card' }).press('Tab');
+  await page1.locator('iframe[name="card-cvv-iframe"]').contentFrame().getByRole('textbox', { name: 'Credit or debit card security' }).fill('100');
+  await page1.locator('iframe[name="billing-line1-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address line one' }).click();
+  await page1.locator('iframe[name="billing-line1-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address line one' }).fill('Testing Lane 1234');
+  await page1.locator('iframe[name="billing-line1-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address line one' }).press('Tab');
+  await page1.locator('iframe[name="billing-line2-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address line two' }).fill('Apt 219');
+  await page1.locator('iframe[name="billing-line2-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address line two' }).press('Tab');
+  await page1.locator('iframe[name="billing-city-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address city' }).fill('Cincinati');
+  await page1.locator('iframe[name="billing-city-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address city' }).press('Tab');
+  await page1.locator('iframe[name="billing-state-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address state' }).fill('OH');
+  await page1.locator('iframe[name="billing-line2-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address line two' }).click();
+  await page1.locator('iframe[name="billing-state-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address state' }).click();
+  await page1.locator('iframe[name="billing-zip-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address zip code' }).click();
+  await page1.locator('iframe[name="billing-zip-iframe"]').contentFrame().getByRole('textbox', { name: 'Billing address zip code' }).fill('45321');
+  await page1.getByTestId('submit-card-payment').click();
